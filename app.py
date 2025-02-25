@@ -105,3 +105,16 @@ print(cur.fetchone())
 
 conn.close()
 
+import psycopg2
+
+try:
+    conn = psycopg2.connect(
+        database="recruitment_db",
+        user="postgres",
+        password="Rishabh@05",
+        host="localhost",
+        port="5432"
+    )
+    print("Connection successful!")
+except psycopg2.OperationalError as e:
+    print(f"Connection failed: {e}")
