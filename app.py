@@ -23,8 +23,8 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Database connection
-conn = psycopg2.connect(database="recruitment_db", user="postgres", password="password", host="localhost", port="5432")
-cursor = conn.cursor()
+# conn = psycopg2.connect(database="recruitment_db", user="postgres", password="password", host="localhost", port="5432")
+# cursor = conn.cursor()
 
 @app.route("/upload", methods=["POST"])
 def upload_resume():
