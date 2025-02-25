@@ -90,3 +90,18 @@ def store_results():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+
+    import os
+import psycopg2
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+# Connect to the database
+conn = psycopg2.connect(DATABASE_URL)
+cur = conn.cursor()
+
+cur.execute("SELECT version();")
+print(cur.fetchone())
+
+conn.close()
+
